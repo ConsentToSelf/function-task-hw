@@ -42,3 +42,32 @@ function reverseString(arg) {
   return res;
 }
 console.log(reverseString(""));
+
+// third
+/*
+Практическое задание по функциям
+Создать функцию, которая в качестве аргумента может принять строку, числа, null или undefined и возвращает строку,
+где каждый символ разделен пробелом и заменен на юникод-значение символа:
+
+getCodeStringFromText("hello") // “104 101 108 108 111”
+
+подсказка: в решении задачи вам помогут методы charCodeAt и trim
+*/
+function getCodeStringFromText(str) {
+  let result = "";
+  if (str == null) {
+    str = String(null);
+  } else if (arguments.length == 0) {
+    str = String(undefined);
+  } else if (str == "") {
+    return "";
+  }
+  if (typeof str == "number") {
+    str = String(str);
+  }
+  for (let i = 0; i < str.length; i++) {
+    result += " " + str[i].charCodeAt();
+  }
+  return result.trim();
+}
+console.log(getCodeStringFromText("hello"));
