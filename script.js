@@ -27,15 +27,8 @@ function multiply() {
 Создать функцию, которая принимает строку и возвращает строку-перевертыш:
 */
 function reverseString(arg) {
-  if (arg == "") {
-    return "";
-  }
   let res = "";
-  if (arguments.length == 0) {
-    arg = String(undefined);
-  } else if (arg == null) {
-    arg = String(null);
-  }
+  arg = String(arg);
   for (let i = arg.length - 1; i >= 0; i--) {
     res += arg[i];
   }
@@ -53,17 +46,8 @@ getCodeStringFromText("hello") // “104 101 108 108 111”
 подсказка: в решении задачи вам помогут методы charCodeAt и trim
 */
 function getCodeStringFromText(str) {
+  str = String(str);
   let result = "";
-  if (str == null) {
-    str = String(null);
-  } else if (arguments.length == 0) {
-    str = String(undefined);
-  } else if (str == "") {
-    return "";
-  }
-  if (typeof str == "number") {
-    str = String(str);
-  }
   for (let i = 0; i < str.length; i++) {
     result += " " + str[i].charCodeAt();
   }
