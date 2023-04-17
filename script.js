@@ -20,6 +20,25 @@ function multiply() {
   }
   return res;
 }
-console.log(multiply(1, 3));
+// console.log(multiply(1, 3));
 
 // second
+/*
+Создать функцию, которая принимает строку и возвращает строку-перевертыш:
+*/
+function reverseString(arg) {
+  if (arg == "") {
+    return "";
+  }
+  let res = "";
+  if (arguments.length == 0) {
+    arg = String(undefined);
+  } else if (arg == null) {
+    arg = String(null);
+  }
+  for (let i = arg.length - 1; i >= 0; i--) {
+    res += arg[i];
+  }
+  return res;
+}
+console.log(reverseString(""));
